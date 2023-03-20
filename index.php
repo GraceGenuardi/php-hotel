@@ -1,44 +1,44 @@
 <?php
 
-// elenco hotel-array
-$hotels = [
-    [
-        "name" => "Hotel Belvedere",
-        "description" => "Hotel Belvedere is located in the heart of the city, just a few steps from the main square.",
-        "city" => "Rome",
-        "country" => "Italy",
-        "price_per_night" => 120
-    ],
-    [
-        "name" => "Grand Hotel",
-        "description" => "Grand Hotel is a luxury hotel located in the historic center of Florence.",
-        "city" => "Florence",
-        "country" => "Italy",
-        "price_per_night" => 300
-    ],
-    [
-        "name" => "Hotel Plaza",
-        "description" => "Hotel Plaza is a modern hotel located in the financial district of Milan.",
-        "city" => "Milan",
-        "country" => "Italy",
-        "price_per_night" => 150
-    ]
-];
+    $hotels = [
 
-//1-Stampare in pagina la lista hotel
+        [
+            'name' => 'Hotel Belvedere',
+            'description' => 'Hotel Belvedere Descrizione',
+            'parking' => true,
+            'vote' => 4,
+            'distance_to_center' => 10.4
+        ],
+        [
+            'name' => 'Hotel Futuro',
+            'description' => 'Hotel Futuro Descrizione',
+            'parking' => true,
+            'vote' => 2,
+            'distance_to_center' => 2
+        ],
+        [
+            'name' => 'Hotel Rivamare',
+            'description' => 'Hotel Rivamare Descrizione',
+            'parking' => false,
+            'vote' => 1,
+            'distance_to_center' => 1
+        ],
+        [
+            'name' => 'Hotel Bellavista',
+            'description' => 'Hotel Bellavista Descrizione',
+            'parking' => false,
+            'vote' => 5,
+            'distance_to_center' => 5.5
+        ],
+        [
+            'name' => 'Hotel Milano',
+            'description' => 'Hotel Milano Descrizione',
+            'parking' => true,
+            'vote' => 2,
+            'distance_to_center' => 50
+        ],
 
-foreach ($hotels as $hotel): 
-    
-  ?>
-     <h2><?= $hotel['name'] ?></h2>
-      <p><?= $hotel['description'] ?></p>
-      <h3><?= $hotel['city'] ?></h3>
-      <p><?= $hotel['country'] ?></p>
-      <h4>Prezzo a notte: <?= $hotel['price_per_night'] ?>€</h4>
-  
-  <?php
-  endforeach;
-
+    ];
 
 ?>
 
@@ -55,6 +55,51 @@ foreach ($hotels as $hotel):
 </head>
 
 <body>
+
+<!--2-Mostrare le informazioni con una tabella. -->
+
+ <div class="container">
+
+   <div class="row">
+
+    <div class="col-11">
+
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+             <th>Name:</th>
+             <th>Description:</th>
+             <th>City:</th>
+             <th>Country:</th>
+             <th>Price:</th>
+         </tr>
+       </thead>
+
+       <tbody>
+
+         <!-- 1-Stampare in pagina la lista hotel -->
+          <?php foreach ($hotels as $hotel): ?>
+
+              <tr>
+                 <td><?= $hotel['name'] ?></td>
+                 <td><?= $hotel['description'] ?></td>
+                 <td><?= $hotel['city'] ?></td>
+                 <td><?= $hotel['country'] ?></td>
+                 <td><?= $hotel['price_per_night'] ?>€</td>
+               </tr>
+
+            <?php endforeach; ?>
+
+        </tbody>
+          
+    </table>
+
+
+    </div>
+
+
+   </div>
+ </div>
 
 
 
